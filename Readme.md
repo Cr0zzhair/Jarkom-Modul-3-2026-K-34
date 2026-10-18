@@ -288,12 +288,16 @@ Pada Soal 17, dilakukan konfigurasi pada Gojo dan Geto untuk meneruskan informas
 
 **jalankan script soal17.sh di geto dan gojo** setelah itu masuk ke client yaga untuk masuk ke databasenya maka kita menggunakan command id bawah ini
 ```
-mariadb -u root -p
+(klw di client yaga)
+mariadb -u root 
+SHOW DATABASES;
+USE db_shibuya_k34;
+SHOW TABLES;
+SELECT * FROM request_logs ORDER BY id DESC LIMIT 10;
+EXIT;
 
-SELECT id, worker_name, client_ip, proxy_ip
-FROM request_logs
-ORDER BY id DESC
-LIMIT 5;
+(lakukan tes di client)
+for i in 1 2 3; do curl -s http://jujutsu.k34.com/api; echo; done
 
 ```
 
