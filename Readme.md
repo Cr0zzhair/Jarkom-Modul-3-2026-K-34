@@ -274,7 +274,7 @@ Untuk menjalankan soal ini kita sangat perlu menjalankan nomor 14 telebih dahulu
 kemudian kita mengek di cleint geo memaki command di bawah ini
 ```
 cek digeto pake ini
-for i in 1 2 3 4; do curl -s --max-time 5 -H 'Host: api.jujutsu.k34.com' http://127.0.0.1/api/; echo; 
+for i in 1 2 3 4; do curl -s --max-time 5 -H 'Host: api.jujutsu.k34.com' http://127.0.0.1/api; echo; done 
 
 ```
 
@@ -288,6 +288,8 @@ Pada Soal 17, dilakukan konfigurasi pada Gojo dan Geto untuk meneruskan informas
 
 **jalankan script soal17.sh di geto dan gojo** setelah itu masuk ke client yaga untuk masuk ke databasenya maka kita menggunakan command id bawah ini
 ```
+mariadb -u root -p
+
 SELECT id, worker_name, client_ip, proxy_ip
 FROM request_logs
 ORDER BY id DESC
