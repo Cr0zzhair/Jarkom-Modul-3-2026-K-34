@@ -171,6 +171,11 @@ di otodori
 
 Soal ini meminta kita mencoba menghentikan DHCP Relay di jichi untuk melihat apa yang terjadi ketika client meminta IP baru, lalu mengaktifkannya kembali untuk memastikan DHCP berfungsi normal.
 
+```
+for pid in $(pidof dhcrelay); do kill "$pid"; done
+
+```
+
 ![09.png](Asset/09.png)
 
 Dari gambar tersebut, terlihat bahwa saat DHCP Relay dihentikan, permintaan IP dari client tidak sampai ke DHCP Server. Setelah relay diaktifkan kembali, client bisa mendapatkan IP dari pool yang sesuai dengan jaringannya dan tetap menggunakan gateway semula.
